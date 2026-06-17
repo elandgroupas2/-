@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>屈臣氏 Watsons 社群輿情儀表盤｜2026年5月</title>
+<meta name="description" content="彙整2026年5月屈臣氏Watsons社群聲量、三大趨勢、優缺點與市場機會分析，並交叉引用公開產業資料。資料彙整觀察，非官方數據。">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="屈臣氏 Watsons 社群輿情儀表盤｜2026年5月">
+<meta property="og:description" content="彙整社群聲量、三大趨勢、優缺點與市場機會分析。資料彙整觀察，非官方數據。">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  :root{
+    --bg:#0F1411;
+    --surface:#161D19;
+    --surface-2:#1C2520;
+    --border:rgba(255,255,255,0.08);
+    --border-strong:rgba(255,255,255,0.16);
+    --text-primary:#F2F4EF;
+    --text-secondary:#A8B3A8;
+    --text-tertiary:#6E7A6E;
+    --accent:#5DCAA5;
+    --accent-strong:#1D9E75;
+    --accent-soft:rgba(93,202,165,0.12);
+    --warm:#E0935C;
+    --warm-soft:rgba(224,147,92,0.12);
+    --danger:#D4537E;
+    --danger-soft:rgba(212,83,126,0.12);
+    --info:#7AA7D9;
+    --ext:#C9A24B;
+    --ext-soft:rgba(201,162,75,0.10);
+    --ext-border:rgba(201,162,75,0.35);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text-primary);
+    font-family:'Noto Sans TC', sans-serif;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .display{font-family:'Space Grotesk','Noto Sans TC',sans-serif;}
+
+  a{color:inherit;}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- NAV ---------- */
+  .topnav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(15,20,17,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .topnav-inner{
+    max-width:1080px;margin:0 auto;padding:14px 24px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:500;font-size:14px;letter-spacing:0.02em;}
+  .brand-mark{
+    width:28px;height:28px;border-radius:7px;
+    background:linear-gradient(135deg,var(--accent),var(--accent-strong));
+    display:flex;align-items:center;justify-content:center;
+    font-size:13px;font-weight:600;color:#06140F;flex-shrink:0;
+  }
+  .navlinks{display:flex;gap:22px;font-size:13px;color:var(--text-secondary);}
+  .navlinks a{text-decoration:none;transition:color .15s;}
+  .navlinks a:hover{color:var(--text-primary);}
+  .navlinks a.active{color:var(--accent);}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:64px 0 40px;border-bottom:1px solid var(--border);}
+  .eyebrow{
+    font-size:12px;letter-spacing:0.12em;text-transform:uppercase;
+    color:var(--accent);font-weight:500;margin:0 0 14px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block;}
+  h1.title{
+    font-size:clamp(28px,4.2vw,42px);
+    font-weight:600;letter-spacing:-0.01em;
+    margin:0 0 14px;max-width:780px;
+  }
+  .hero-sub{font-size:15px;color:var(--text-secondary);max-width:640px;margin:0 0 30px;}
+  .hero-meta{display:flex;gap:24px;flex-wrap:wrap;font-size:12.5px;color:var(--text-tertiary);}
+  .hero-meta span{display:flex;align-items:center;gap:6px;}
+
+  /* ---------- METRICS ---------- */
+  .metrics{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--border);
+    border:1px solid var(--border);
+    border-radius:14px;overflow:hidden;
+    margin-top:36px;
+  }
+  .metric{background:var(--surface);padding:22px 22px 20px;}
+  .metric-label{font-size:12.5px;color:var(--text-secondary);margin:0 0 10px;}
+  .metric-value{font-size:30px;font-weight:600;margin:0;font-family:'Space Grotesk',sans-serif;letter-spacing:-0.01em;}
+  .metric-value .unit{font-size:15px;font-weight:500;color:var(--text-secondary);margin-left:4px;}
+  .metric-foot{font-size:12px;color:var(--text-tertiary);margin:8px 0 0;}
+  .metric.accent .metric-value{color:var(--accent);}
+  .metric.warm .metric-value{color:var(--warm);}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:64px 0;border-bottom:1px solid var(--border);}
+  section:last-of-type{border-bottom:none;}
+  .section-head{margin-bottom:32px;}
+  .section-num{
+    font-family:'Space Grotesk',sans-serif;font-size:12px;color:var(--accent);
+    letter-spacing:0.08em;margin:0 0 10px;font-weight:500;
+  }
+  h2.section-title{font-size:24px;font-weight:600;margin:0 0 10px;letter-spacing:-0.005em;}
+  .section-desc{font-size:14px;color:var(--text-secondary);max-width:600px;margin:0;}
+
+  .chart-card{
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:14px;padding:24px 24px 16px;margin-bottom:20px;
+  }
+  .chart-card-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px;flex-wrap:wrap;gap:8px;}
+  .chart-card-title{font-size:14px;font-weight:500;margin:0;}
+  .legend-row{display:flex;gap:18px;font-size:12px;color:var(--text-secondary);flex-wrap:wrap;}
+  .legend-row span{display:flex;align-items:center;gap:6px;}
+  .dot{width:8px;height:8px;border-radius:2px;display:inline-block;}
+  .chart-wrap{position:relative;width:100%;}
+
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+
+  /* ---------- TREND CARDS ---------- */
+  .trend-list{display:flex;flex-direction:column;gap:16px;}
+  .trend-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:14px;
+    padding:26px 28px;display:grid;grid-template-columns:48px 1fr;gap:20px;
+    position:relative;overflow:hidden;
+  }
+  .trend-card::before{
+    content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  }
+  .trend-card.t1::before{background:var(--accent);}
+  .trend-card.t2::before{background:var(--warm);}
+  .trend-card.t3::before{background:var(--info);}
+  .trend-rank{
+    font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;
+    color:var(--text-tertiary);line-height:1;padding-top:2px;
+  }
+  .trend-card.t1 .trend-rank{color:var(--accent);}
+  .trend-card.t2 .trend-rank{color:var(--warm);}
+  .trend-card.t3 .trend-rank{color:var(--info);}
+  .trend-body h3{font-size:16.5px;font-weight:500;margin:0 0 8px;}
+  .trend-body p{font-size:13.5px;color:var(--text-secondary);margin:0;line-height:1.75;}
+  .trend-tags{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;}
+  .tag{
+    font-size:11.5px;padding:4px 10px;border-radius:20px;
+    background:var(--surface-2);color:var(--text-secondary);border:1px solid var(--border);
+  }
+
+  /* ---------- EXTERNAL DATA TREATMENT ---------- */
+  .src-legend{
+    display:flex;gap:20px;flex-wrap:wrap;margin-bottom:28px;
+    font-size:12px;color:var(--text-tertiary);
+  }
+  .src-legend span{display:flex;align-items:center;gap:7px;}
+
+  .disclaimer-bar{
+    background:var(--surface);border-bottom:1px solid var(--border);
+    padding:10px 0;
+  }
+  .disclaimer-bar .wrap{display:flex;align-items:center;gap:10px;}
+  .disclaimer-bar p{font-size:12px;color:var(--text-tertiary);margin:0;line-height:1.6;}
+  .disclaimer-bar .dot{width:6px;height:6px;border-radius:50%;background:var(--text-tertiary);flex-shrink:0;}
+  .src-chip{
+    font-size:10px;font-weight:500;padding:2px 8px;border-radius:5px;letter-spacing:0.02em;
+  }
+  .src-chip.opview{background:rgba(122,167,217,0.14);color:var(--info);}
+  .src-chip.ext{background:var(--ext-soft);color:var(--ext);}
+
+  .badge-ext{
+    display:inline-flex;align-items:center;gap:5px;
+    font-size:10.5px;font-weight:500;color:var(--ext);
+    background:var(--ext-soft);border:1px solid var(--ext-border);
+    padding:3px 9px;border-radius:6px;letter-spacing:0.01em;
+    white-space:nowrap;
+  }
+  .badge-ext::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--ext);flex-shrink:0;}
+
+  .ext-card{
+    border:1px dashed var(--ext-border) !important;
+    background:linear-gradient(180deg, var(--ext-soft) 0%, var(--surface) 70px) !important;
+  }
+  .ext-card .opp-icon{border-color:var(--ext-border);}
+
+  .source-note{
+    font-size:11.5px;color:var(--text-tertiary);margin:10px 0 0;
+    display:flex;align-items:flex-start;gap:6px;line-height:1.6;
+  }
+  .source-note a{color:var(--ext);text-decoration:none;border-bottom:1px solid var(--ext-border);}
+  .source-note a:hover{border-bottom-color:var(--ext);}
+
+  .mixed-card{position:relative;}
+  .mixed-card .badge-ext{position:absolute;top:18px;right:18px;}
+
+  .section-tag-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px;}
+
+  /* ---------- COMPETITIVE LANDSCAPE ---------- */
+  .market-strip{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    background:var(--ext-border);
+    border:1px dashed var(--ext-border);
+    border-radius:14px;overflow:hidden;margin-bottom:24px;
+  }
+  .market-stat{background:var(--surface);padding:20px 22px;}
+  .market-stat p.label{font-size:12px;color:var(--text-secondary);margin:0 0 8px;}
+  .market-stat p.value{font-size:22px;font-weight:600;margin:0;font-family:'Space Grotesk',sans-serif;color:var(--ext);}
+  .market-stat p.foot{font-size:11.5px;color:var(--text-tertiary);margin:6px 0 0;}
+
+  .competitor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:8px;}
+  .competitor-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 20px;
+  }
+  .competitor-card.lead{border-color:rgba(93,202,165,0.4);}
+  .competitor-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;}
+  .competitor-head h3{font-size:15.5px;font-weight:500;margin:0;}
+  .competitor-pill{font-size:10.5px;padding:3px 8px;border-radius:6px;background:var(--accent-soft);color:var(--accent);font-weight:500;}
+  .competitor-stats{display:flex;flex-direction:column;gap:8px;margin-bottom:4px;}
+  .competitor-stats .row{display:flex;justify-content:space-between;font-size:12.5px;border-top:1px solid var(--border);padding-top:8px;}
+  .competitor-stats .row:first-child{border-top:none;padding-top:0;}
+  .competitor-stats .row .k{color:var(--text-secondary);}
+  .competitor-stats .row .v{font-weight:500;font-family:'Space Grotesk',sans-serif;}
+  .competitor-stats .row .v.na{color:var(--text-tertiary);font-family:'Noto Sans TC',sans-serif;font-weight:400;font-size:12px;}
+  .competitor-card .disclosure{
+    margin-top:14px;padding-top:12px;border-top:1px dashed var(--border-strong);
+    font-size:11.5px;color:var(--text-tertiary);line-height:1.6;
+  }
+
+  .landscape-sub{font-size:14px;font-weight:500;margin:0 0 14px;color:var(--text-primary);}
+  .landscape-block{margin-bottom:36px;}
+
+  .store-format-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .format-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 18px;
+  }
+  .format-card h4{font-size:13.5px;font-weight:500;margin:0 0 6px;}
+  .format-card p{font-size:12px;color:var(--text-secondary);margin:0;line-height:1.65;}
+  .format-card .format-pill{
+    display:inline-block;font-size:10.5px;color:var(--text-tertiary);
+    background:var(--surface-2);padding:2px 8px;border-radius:5px;margin-bottom:8px;
+  }
+
+  .timeline-list{display:flex;flex-direction:column;gap:0;}
+  .timeline-item{
+    display:grid;grid-template-columns:90px 1fr;gap:16px;
+    padding:14px 0;border-top:1px solid var(--border);
+  }
+  .timeline-item:first-child{border-top:none;}
+  .timeline-item .tdate{font-size:12px;color:var(--ext);font-family:'Space Grotesk',sans-serif;font-weight:500;padding-top:1px;}
+  .timeline-item .tcontent p{font-size:13px;margin:0;color:var(--text-primary);line-height:1.6;}
+  .timeline-item .tcontent .tco{font-size:11.5px;color:var(--text-tertiary);margin:3px 0 0;}
+
+  .compare-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:8px;}
+  .compare-table th,.compare-table td{
+    text-align:left;padding:12px 16px;border-bottom:1px solid var(--border);
+  }
+  .compare-table th{
+    font-size:11.5px;color:var(--text-secondary);font-weight:500;
+    text-transform:uppercase;letter-spacing:0.04em;
+  }
+  .compare-table td{color:var(--text-primary);}
+  .compare-table td.na{color:var(--text-tertiary);font-size:12px;}
+  .compare-table tr.lead-row td:first-child{color:var(--accent);font-weight:500;}
+  .compare-table td:first-child,.compare-table th:first-child{font-weight:500;}
+  .compare-table-wrap{overflow-x:auto;margin-bottom:14px;border:1px solid var(--border);border-radius:14px;}
+  .compare-table-wrap table{margin-bottom:0;}
+  .compare-table-wrap tr:last-child td{border-bottom:none;}
+
+  /* ---------- PROS/CONS ---------- */
+  .pc-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 26px;
+  }
+  .pc-head{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+  .pc-icon{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+  .pc-card.pro .pc-icon{background:var(--accent-soft);color:var(--accent);}
+  .pc-card.con .pc-icon{background:var(--danger-soft);color:var(--danger);}
+  .pc-head h3{font-size:15px;font-weight:500;margin:0;}
+  .pc-card ul{margin:0;padding-left:0;list-style:none;font-size:13.5px;color:var(--text-primary);}
+  .pc-card li{padding:10px 0;border-top:1px solid var(--border);display:flex;gap:10px;}
+  .pc-card li:first-child{border-top:none;padding-top:0;}
+  .pc-card li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--text-tertiary);flex-shrink:0;margin-top:8px;}
+  .pc-card.pro li::before{background:var(--accent);}
+  .pc-card.con li::before{background:var(--danger);}
+
+  /* ---------- OPPORTUNITY ---------- */
+  .opp-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:14px;
+    padding:24px 22px;
+  }
+  .opp-icon{
+    width:36px;height:36px;border-radius:9px;background:var(--surface-2);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:16px;
+    border:1px solid var(--border);
+  }
+  .opp-card h3{font-size:15px;font-weight:500;margin:0 0 8px;}
+  .opp-card p{font-size:13px;color:var(--text-secondary);margin:0;line-height:1.7;}
+
+  /* ---------- INSIGHTS ---------- */
+  .insight-row{
+    display:grid;grid-template-columns:36px 1fr;gap:16px;
+    padding:20px 0;border-top:1px solid var(--border);
+  }
+  .insight-row:first-child{border-top:none;padding-top:4px;}
+  .insight-row.ext-row{
+    border-top:1px dashed var(--ext-border);
+    background:linear-gradient(90deg, var(--ext-soft) 0%, transparent 40%);
+    border-radius:10px;padding:20px 14px;margin:0 -14px;
+  }
+  .insight-row.ext-row:first-child{border-top:1px dashed var(--ext-border);}
+  .insight-row.ext-row .insight-num{color:var(--ext);}
+  .insight-row .badge-ext{margin-bottom:6px;}
+  .insight-num{
+    font-family:'Space Grotesk',sans-serif;color:var(--accent);font-weight:600;font-size:14px;padding-top:1px;
+  }
+  .insight-row h3{font-size:15px;font-weight:500;margin:0 0 6px;}
+  .insight-row p{font-size:13.5px;color:var(--text-secondary);margin:0;line-height:1.75;}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:40px 0 60px;}
+  footer p{font-size:12px;color:var(--text-tertiary);margin:0;line-height:1.8;max-width:680px;}
+
+  @media (max-width:760px){
+    .metrics{grid-template-columns:repeat(2,1fr);}
+    .grid-2,.grid-3{grid-template-columns:1fr;}
+    .navlinks{display:none;}
+    h1.title{font-size:28px;}
+    .trend-card{grid-template-columns:32px 1fr;padding:20px;}
+    .market-strip{grid-template-columns:1fr;}
+    .competitor-grid{grid-template-columns:1fr;}
+    .mixed-card .badge-ext{position:static;display:inline-flex;margin-bottom:10px;}
+    .store-format-grid{grid-template-columns:1fr;}
+    .compare-table{font-size:12px;}
+    .compare-table th,.compare-table td{padding:10px 10px;}
+    .timeline-item{grid-template-columns:1fr;gap:4px;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="brand"><span class="brand-mark">W</span>屈臣氏社群輿情</div>
+    <div class="navlinks">
+      <a href="#overview">總覽</a>
+      <a href="#trends">三大趨勢</a>
+      <a href="#proscons">優缺點</a>
+      <a href="#landscape">市場地圖</a>
+      <a href="#opportunity">市場機會</a>
+      <a href="#insights">消費者洞察</a>
+    </div>
+  </div>
+</nav>
+
+<div class="disclaimer-bar">
+  <div class="wrap">
+    <span class="dot"></span>
+    <p>本頁為公開分享之資料彙整觀察，內容混合社群聲量統計與公開產業報導，非屈臣氏官方數據或內部資料，僅供研究與參考使用。</p>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">社群輿情儀表盤</p>
+    <h1 class="title">屈臣氏 Watsons<br>2026 年 5 月聲量觀察報告</h1>
+    <p class="hero-sub">彙整全月社群、新聞與評論共 98,554 筆討論，拆解三大聲量趨勢、產品與服務優缺點、市場機會，以及消費者需求洞察。</p>
+    <div class="hero-meta">
+      <span>統計期間 2026/05/01 – 2026/05/31</span>
+      <span>關鍵字：屈臣氏、Watsons</span>
+      <span>資料來源：Opview 社群輿情分析平台</span>
+    </div>
+
+    <div class="metrics" id="overview">
+      <div class="metric">
+        <p class="metric-label">總聲量</p>
+        <p class="metric-value">98,554<span class="unit">筆</span></p>
+        <p class="metric-foot">涵蓋社群、新聞、論壇、留言</p>
+      </div>
+      <div class="metric accent">
+        <p class="metric-label">正負評比</p>
+        <p class="metric-value">31.0</p>
+        <p class="metric-foot">正面聲量遠高於負面</p>
+      </div>
+      <div class="metric">
+        <p class="metric-label">正面聲量佔比</p>
+        <p class="metric-value">56.2<span class="unit">%</span></p>
+        <p class="metric-foot">55,437 筆正面討論</p>
+      </div>
+      <div class="metric warm">
+        <p class="metric-label">負面聲量佔比</p>
+        <p class="metric-value">1.8<span class="unit">%</span></p>
+        <p class="metric-foot">1,786 筆負面討論</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap" style="padding-top:28px;">
+  <div class="src-legend">
+    <span><span class="src-chip opview">OPVIEW</span>社群輿情數據，本頁圖表預設來源</span>
+    <span><span class="src-chip ext">外部資料</span>產業報導／公開財報／第三方調研，獨立標示來源連結</span>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-num">DATA · 01</p>
+      <h2 class="section-title">聲量與情緒趨勢</h2>
+      <p class="section-desc">5 月下旬（5/20–5/26）出現全月聲量高峰，單日最高達 6,825 筆，主要受芥末熊聯名活動與統一集團雙六百店新聞帶動。</p>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-card-head">
+        <p class="chart-card-title">每日聲量與正負評比</p>
+        <div class="legend-row">
+          <span><span class="dot" style="background:#7AA7D9"></span>每日聲量（筆）</span>
+          <span><span class="dot" style="background:#E0935C"></span>正負評比（右軸）</span>
+        </div>
+      </div>
+      <div class="chart-wrap" style="height:300px;">
+        <canvas id="trendChart" role="img" aria-label="2026年5月每日聲量與正負評比折線圖。聲量在5月20日至26日達到高峰，單日最高6,825筆，對應屈臣氏X Wasabi Bear聯名活動。正負評比全月維持正值，5月21日最高達73.74。"></canvas>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="chart-card">
+        <div class="chart-card-head"><p class="chart-card-title">來源管道分佈</p></div>
+        <div class="chart-wrap" style="height:240px;">
+          <canvas id="sourceChart" role="img" aria-label="來源管道圓餅圖：社群平台佔95.2%為主要來源，其次為新聞媒體2.7%、留言評論1.3%、論壇0.7%、部落格極少。"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-head"><p class="chart-card-title">討論族群佔比</p></div>
+        <div class="chart-wrap" style="height:240px;">
+          <canvas id="audienceChart" role="img" aria-label="討論族群長條圖：上班族佔1.34%最高，其次女性1.29%、有子女0.53%、男性0.42%、已婚0.36%、未婚0.31%、青年0.10%、學生0.03%。"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-card-head"><p class="chart-card-title">熱門關鍵字（聲量權重 Top 10）</p></div>
+      <div class="chart-wrap" style="height:300px;">
+        <canvas id="keywordChart" role="img" aria-label="熱門關鍵字長條圖：屈臣氏獨家權重最高，其次為一樓、超細、牙線棒、小資、泥膜、衛生紙、韓國、超萌、康是美。"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="trends">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-num">ANALYSIS · 02</p>
+      <h2 class="section-title">三大聲量趨勢</h2>
+      <p class="section-desc">依聲量規模、話題擴散力與內容性質排序。</p>
+    </div>
+
+    <div class="trend-list">
+      <div class="trend-card t1">
+        <p class="trend-rank">01</p>
+        <div class="trend-body">
+          <h3>韓系療癒 IP「芥末熊 Wasabi Bear」聯名引爆社群討論</h3>
+          <p>5 月 21 日起推出的「Wasabi Bear + Bear 加倍 Fun」加價購活動，搭配西門町門市快閃陳列，帶動單篇貼文互動量最高破 700 則留言，並推升 5/21–5/26 聲量達到全月高峰（單日最高 6,825 筆）。「超萌」「韓國」成為熱門關鍵字，顯示萌系 IP 聯名是現階段最有效的聲量催化劑。</p>
+          <div class="trend-tags"><span class="tag">IP聯名</span><span class="tag">西門町快閃</span><span class="tag">韓系療癒風</span></div>
+        </div>
+      </div>
+
+      <div class="trend-card t2">
+        <p class="trend-rank">02</p>
+        <div class="trend-body">
+          <h3>「屈臣氏獨家」成為討論核心詞，平價美妝小物撐起長尾聲量</h3>
+          <p>「獨家」「#屈臣氏獨家」權重分數高達 12,729 與 8,001，僅次於品牌名本身。牙線棒、泥膜、衛生紙等「小資」民生美妝小物的開箱、推薦貼文持續產生穩定討論，反映消費者將屈臣氏視為「平價剛需品＋小確幸美妝」一站購足的通路。</p>
+          <div class="trend-tags"><span class="tag">獨家商品</span><span class="tag">小資剛需</span><span class="tag">長尾聲量</span></div>
+        </div>
+      </div>
+
+      <div class="trend-card t3">
+        <p class="trend-rank">03</p>
+        <div class="trend-body">
+          <h3>線下大型活動串連會員經營（春日嘉年華、Target Pro 十週年）</h3>
+          <p>月初「2026 Spring Love Festival 春日愛購物嘉年華」於華山舉辦，月中「Target Pro 十週年禮盒」開箱文帶動精準美妝客群分享，兩者都伴隨會員集點、抽獎機制，顯示屈臣氏持續以「線下活動＋社群擴散＋會員綁定」三合一模式維持聲量基本盤。</p>
+          <div class="trend-tags"><span class="tag">會員經營</span><span class="tag">線下活動</span><span class="tag">UGC開箱</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proscons">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-num">ANALYSIS · 03</p>
+      <h2 class="section-title">產品與服務優缺點</h2>
+      <p class="section-desc">主要彙整自門市評論與社群留言中的質性內容。</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="pc-card pro">
+        <div class="pc-head"><div class="pc-icon">＋</div><h3>優勢</h3></div>
+        <ul>
+          <li>門市服務態度普遍受好評，店員主動協尋商品、親切指引常被點名稱讚</li>
+          <li>獨家聯名（韓系IP、品牌限定款）持續創造話題與來店動機</li>
+          <li>會員集點與優惠機制（Cube卡等）被認為划算、提醒到位</li>
+          <li>商品齊全、可一站購足日用品與美妝保健，部分品項比競品便宜</li>
+        </ul>
+      </div>
+      <div class="pc-card con">
+        <div class="pc-head"><div class="pc-icon">－</div><h3>劣勢</h3></div>
+        <ul>
+          <li>部分門市結帳人手不足，尖峰時段排隊久、樓層間支援不及</li>
+          <li>個別店員態度不一，過度推銷加購品引發消費者不悅</li>
+          <li>偶有找零、退貨爭議等基本服務糾紛被公開分享</li>
+          <li>大型活動現場動線規劃不佳，曾被建議提早入場避免人潮</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="landscape">
+  <div class="wrap">
+    <div class="section-tag-row">
+      <p class="section-num" style="margin-bottom:0;">MARKET · 04</p>
+      <span class="badge-ext">外部資料</span>
+    </div>
+    <h2 class="section-title">市場地圖：藥妝通路競爭格局</h2>
+    <p class="section-desc">本區塊資料來自產業媒體報導與企業公開財報，非 Opview 聲量數據，用以補充屈臣氏在整體藥妝市場中的競爭位置。</p>
+
+    <div style="height:24px;"></div>
+
+    <div class="market-strip">
+      <div class="market-stat">
+        <p class="label">台灣藥妝零售市場規模</p>
+        <p class="value">2,160 億元</p>
+        <p class="foot">2025年化粧品業營業額，年成長3.1%</p>
+      </div>
+      <div class="market-stat">
+        <p class="label">屈臣氏全台門市數</p>
+        <p class="value">580 → 600 家</p>
+        <p class="foot">2024年底580家，目標2025上半年達600家</p>
+      </div>
+      <div class="market-stat">
+        <p class="label">屈臣氏集團全球排名</p>
+        <p class="value">第 14 名</p>
+        <p class="foot">2026全球50大零售商，31市場、逾17,000家店</p>
+      </div>
+    </div>
+
+    <div class="landscape-block">
+      <p class="landscape-sub">三大通路關鍵指標對照</p>
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>指標</th>
+              <th>屈臣氏 Watsons</th>
+              <th>寶雅 POYA</th>
+              <th>康是美 CosMed</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="lead-row">
+              <td>全台門市數</td>
+              <td>約580家（目標600家）</td>
+              <td>470家（2026目標500家）</td>
+              <td>約490-600家（來源不一）</td>
+            </tr>
+            <tr>
+              <td>會員人數</td>
+              <td>650萬+</td>
+              <td>730萬+</td>
+              <td class="na">未單獨揭露（併入OPENPOINT聯盟點數）</td>
+            </tr>
+            <tr>
+              <td>年營收</td>
+              <td class="na">未公開揭露（屬長和系私有子公司）</td>
+              <td>253.2億元（2025年）</td>
+              <td>148.9億元（2024年）</td>
+            </tr>
+            <tr>
+              <td>上市狀態</td>
+              <td class="na">未上市（屬屈臣氏集團）</td>
+              <td>上櫃（5904.TWO）</td>
+              <td class="na">未單獨上市（併入統一超財報）</td>
+            </tr>
+            <tr>
+              <td>策略重點</td>
+              <td>四大店型優化、長照與處方箋市場</td>
+              <td>美妝店型POYA Beauty、自有品牌</td>
+              <td>生活百貨化、跨足零食飾品</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="source-note">屈臣氏台灣為跨國集團「屈臣氏集團」（屬長江和記實業）旗下未單獨上市的子公司，台灣地區財報不對外公開揭露；寶雅為台灣上櫃公司（股票代號5904），財報資訊公開透明；康是美為統一超商轉投資的「統一生活事業」，其營收數字主要來自統一超財報附註揭露，並非獨立上市公司，故部分欄位以「未公開揭露」標示，而非實際數值缺漏。</p>
+    </div>
+
+    <div class="landscape-block">
+      <p class="landscape-sub">屈臣氏四大店型策略</p>
+      <div class="store-format-grid">
+        <div class="format-card">
+          <span class="format-pill">目的型美妝店</span>
+          <h4>Destination Beauty Lover</h4>
+          <p>商圈精華地段旗艦店，如西門旗艦店，主打獨家品牌與觀光客採購需求，國際客占比可達6-7成。</p>
+        </div>
+        <div class="format-card">
+          <span class="format-pill">都會美妝店</span>
+          <h4>Urban Beauty Lover</h4>
+          <p>聚焦都會上班族與年輕女性，加強彩妝保養品類深度，貨架陳列與動線以美妝體驗為核心。</p>
+        </div>
+        <div class="format-card">
+          <span class="format-pill">都會住宅店</span>
+          <h4>Urban Residents</h4>
+          <p>服務鄰近住宅社區，商品組合偏向日用品與家庭採購，貼近民生剛需。</p>
+        </div>
+        <div class="format-card">
+          <span class="format-pill">厝邊店</span>
+          <h4>Local Patrons</h4>
+          <p>深入地方商圈與年長客群，搭配長照與健康諮詢服務，因應台灣超高齡化社會需求。</p>
+        </div>
+        <div class="format-card">
+          <span class="format-pill">健康延伸</span>
+          <h4>長照／處方箋門市</h4>
+          <p>已於汐止、高雄德民開立長照門市，並積極申請藥品優良運銷規範，預估帶動健康品類3-4成成長。</p>
+        </div>
+        <div class="format-card">
+          <span class="format-pill">線上線下</span>
+          <h4>O+O 虛實整合平台</h4>
+          <p>線上線下會員消費占比目標拉抬至25%，電商品項逾10萬支，獨賣品超過1.6萬支。</p>
+        </div>
+      </div>
+      <p class="source-note">來源：工商時報〈屈臣氏布局600家事業版圖〉、經濟日報〈松本清、寶雅來勢洶洶〉、Yahoo新聞〈健康商品業績逾4成〉。</p>
+    </div>
+
+    <div class="landscape-block">
+      <p class="landscape-sub">通路競爭動態時間軸</p>
+      <div class="timeline-list">
+        <div class="timeline-item">
+          <p class="tdate">2024 Q4</p>
+          <div class="tcontent">
+            <p>寶雅第4季單月新開19家門市，全年營收衝破253億元創新高，年增7.16%，展現展店爆發力。</p>
+            <p class="tco">來源：CMoney〈寶雅全年營收衝破253億〉</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <p class="tdate">2024-2025</p>
+          <div class="tcontent">
+            <p>康是美持續「生活百貨化」，跨足零食、飾品、麵包等品類，被市場解讀為向寶雅宣戰，全台門市數逼近400-490家區間。</p>
+            <p class="tco">來源：聯合新聞網〈統一康是美轉型 劍指寶雅〉</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <p class="tdate">2025 年底</p>
+          <div class="tcontent">
+            <p>屈臣氏啟動上億元「四大店型優化策略」，盤點580家門市評估升級，目標2026上半年達600店，西門旗艦店率先完成改裝。</p>
+            <p class="tco">來源：工商時報〈屈臣氏布局600家事業版圖〉</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <p class="tdate">2026.02</p>
+          <div class="tcontent">
+            <p>寶雅宣布2026年將延續多元店型布局策略，加速在尚未完全開發區域展店，目標突破500家門市。</p>
+            <p class="tco">來源：MoneyDJ〈寶雅強化展店與新業態布局〉</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <p class="tdate">2026.05.26</p>
+          <div class="tcontent">
+            <p>統一集團於南港車站旁開出星巴克、康是美雙六百店「愿秀門市」，董事長羅智先以「市場需求並未消失」回應景氣不確定性。</p>
+            <p class="tco">來源：udn〈統一迎雙六百店里程碑〉，亦為本月Opview聲量榜文章來源</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="opportunity">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-num">ANALYSIS · 05</p>
+      <h2 class="section-title">市場機會</h2>
+      <p class="section-desc">結合 Opview 聲量數據與外部產業情報推導出的可執行方向。</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="opp-card">
+        <div class="opp-icon">①</div>
+        <h3>擴大療癒系 IP 聯名版圖</h3>
+        <p>芥末熊單檔活動帶動全月聲量高峰，證明療癒、萌系周邊對年輕女性客群極具吸引力，可規劃常態化 IP 輪番合作節奏。</p>
+      </div>
+      <div class="opp-card">
+        <div class="opp-icon">②</div>
+        <h3>強化結帳與服務數位化</h3>
+        <p>排隊久、人手不足是最具體的負評來源，行動結帳、自助結帳或活動期間動態調度人力可直接改善體驗痛點。</p>
+      </div>
+      <div class="opp-card">
+        <div class="opp-icon">③</div>
+        <h3>深化「小資剛需」品類內容行銷</h3>
+        <p>牙線棒、泥膜、衛生紙等平價民生品聲量穩定但聲勢被聯名活動掩蓋，可獨立規劃「小資好物」系列內容延續長尾流量。</p>
+      </div>
+      <div class="opp-card mixed-card ext-card">
+        <span class="badge-ext">外部資料</span>
+        <div class="opp-icon">④</div>
+        <h3>卡位「身體保養／頭皮護理」雙位數成長品類</h3>
+        <p>產業報告指出身體保養、頭皮護理、香氛呈雙位數成長，消費焦點正由臉部擴散至全身，屈臣氏可提前佈局貨架配置與獨家品開發。</p>
+        <p class="source-note">來源：就享知〈2026台灣美妝業趨勢報告〉</p>
+      </div>
+      <div class="opp-card mixed-card ext-card">
+        <span class="badge-ext">外部資料</span>
+        <div class="opp-icon">⑤</div>
+        <h3>對抗康是美「生活百貨化」的差異化定位</h3>
+        <p>康是美持續跨足零食、飾品搶攻寶雅客群，屈臣氏的差異化機會在於強化藥師諮詢、健康品類等專業形象，避免陷入同質化價格戰。</p>
+        <p class="source-note">來源：聯合新聞網〈統一康是美轉型 劍指寶雅〉</p>
+      </div>
+      <div class="opp-card mixed-card ext-card">
+        <span class="badge-ext">外部資料</span>
+        <div class="opp-icon">⑥</div>
+        <h3>長照與處方箋門市的健康事業延伸</h3>
+        <p>因應台灣邁入超高齡社會，長照門市與處方箋服務預估可帶動健康品類3-4成成長，是美妝聯名之外的第二成長曲線。</p>
+        <p class="source-note">來源：工商時報〈屈臣氏布局600家事業版圖〉</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="insights">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-num">ANALYSIS · 06</p>
+      <h2 class="section-title">消費者需求洞察</h2>
+      <p class="section-desc">前四項從社群貼文與評論語氣中歸納；後兩項引用第三方消費趨勢調研進行交叉驗證。</p>
+    </div>
+
+    <div>
+      <div class="insight-row">
+        <p class="insight-num">01</p>
+        <div>
+          <h3>情緒療癒與小確幸需求明顯</h3>
+          <p>新聞稿與消費者貼文都不約而同強調「療癒感」「情緒釋放」是現代人逛屈臣氏的潛在動機，萌系周邊不只是收藏品，更是壓力出口。</p>
+        </div>
+      </div>
+      <div class="insight-row">
+        <p class="insight-num">02</p>
+        <div>
+          <h3>高敏感度比價心理</h3>
+          <p>消費者習慣將屈臣氏與寶雅、康是美、蝦皮等並列比較，「比較便宜」「物美價廉」是促成轉換購買的關鍵詞，價格透明度與獨家折扣是留客重點。</p>
+        </div>
+      </div>
+      <div class="insight-row">
+        <p class="insight-num">03</p>
+        <div>
+          <h3>人員服務仍是體驗核心</h3>
+          <p>無論正負評論，主角幾乎都是「店員」而非商品本身——消費者重視的是被理解、被協助找到合適商品，而非單純被推銷，顧問式服務若拿捏得當能顯著拉高客單與好感。</p>
+        </div>
+      </div>
+      <div class="insight-row">
+        <p class="insight-num">04</p>
+        <div>
+          <h3>會員與集點機制驅動黏著度</h3>
+          <p>Cube 卡權益提醒、集點換購等被多次正面提及，顯示會員制度已是消費者決策考量之一，而非單純結帳附加動作。</p>
+        </div>
+      </div>
+      <div class="insight-row ext-row">
+        <p class="insight-num">05</p>
+        <div>
+          <span class="badge-ext">外部資料</span>
+          <h3>「謹慎樂觀」與「快樂行動主義」雙軌並行</h3>
+          <p>Yahoo／Kantar／Dentsu 消費者搜尋洞察報告指出，台灣消費者一方面謹慎樂觀地投入身心健康與保健（美容儀搜尋成長1.89倍），另一方面也擁抱「快樂行動主義」，以IP聯名與禮盒犒賞自己（禮盒搜尋成長2.4倍）——與本月芥末熊聯名引爆聲量的現象高度吻合，顯示這不只是單次活動效應，而是更大消費心理趨勢下的具體案例。</p>
+          <p class="source-note">來源：Yahoo〈2025消費者搜尋趨勢洞察報告〉，引用自 Shopline〈2026台灣消費趨勢洞察〉</p>
+        </div>
+      </div>
+      <div class="insight-row ext-row">
+        <p class="insight-num">06</p>
+        <div>
+          <span class="badge-ext">外部資料</span>
+          <h3>口碑與真實使用心得取代傳統廣告說服力</h3>
+          <p>產業趨勢報告指出，2026年消費者購買美妝保養品前更依賴「真實評價＋使用者分享＋社群討論＋在地口碑」，短影音與真實試用內容比傳統業配文更具說服力——這也解釋了本月聲量高峰多由素人開箱、門市實際評論驅動，而非官方廣告貼文。</p>
+          <p class="source-note">來源：〈2026美妝保養產業趨勢：從國內口碑到跨境電商〉</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="wrap">
+    <p style="margin-bottom:10px;"><span class="src-chip opview" style="margin-right:6px;">OPVIEW</span>聲量數據來源：Opview 社群輿情分析平台（市場概況／主題深度／族群分析），關鍵字「屈臣氏」「Watsons」，統計期間 2026/05/01–2026/05/31，社群佔比基於可標註族群屬性之討論樣本。</p>
+    <p style="margin-bottom:10px;"><span class="src-chip ext" style="margin-right:6px;">外部資料</span>市場地圖與標註「外部資料」之機會點、洞察，引用自產業媒體報導、企業公開財報及第三方消費趨勢調研，各篇出處已於對應段落標明，統計口徑與時間點可能不一致，僅供方向性參考。</p>
+    <p>本頁面為資料彙整觀察，非屈臣氏官方數據，內容如有疏漏或更新需求，歡迎指正。</p>
+  </div>
+</footer>
+
+<script>
+var dailyData = [{"date":"05/01","doc_num":5478,"pn_ratio":12.5},{"date":"05/02","doc_num":2004,"pn_ratio":12.2},{"date":"05/03","doc_num":2113,"pn_ratio":23.74},{"date":"05/04","doc_num":3503,"pn_ratio":49.34},{"date":"05/05","doc_num":2959,"pn_ratio":59.39},{"date":"05/06","doc_num":2138,"pn_ratio":42.51},{"date":"05/07","doc_num":1662,"pn_ratio":32.69},{"date":"05/08","doc_num":1466,"pn_ratio":19.7},{"date":"05/09","doc_num":1147,"pn_ratio":23.43},{"date":"05/10","doc_num":821,"pn_ratio":11.54},{"date":"05/11","doc_num":2042,"pn_ratio":52.06},{"date":"05/12","doc_num":1573,"pn_ratio":24.13},{"date":"05/13","doc_num":880,"pn_ratio":13.58},{"date":"05/14","doc_num":1827,"pn_ratio":25.79},{"date":"05/15","doc_num":3873,"pn_ratio":65.37},{"date":"05/16","doc_num":2210,"pn_ratio":30.88},{"date":"05/17","doc_num":2509,"pn_ratio":61.7},{"date":"05/18","doc_num":3194,"pn_ratio":23.41},{"date":"05/19","doc_num":3706,"pn_ratio":8.65},{"date":"05/20","doc_num":4061,"pn_ratio":36.27},{"date":"05/21","doc_num":5069,"pn_ratio":73.74},{"date":"05/22","doc_num":5760,"pn_ratio":59.81},{"date":"05/23","doc_num":4063,"pn_ratio":26.17},{"date":"05/24","doc_num":6825,"pn_ratio":64.93},{"date":"05/25","doc_num":3774,"pn_ratio":44.05},{"date":"05/26","doc_num":4945,"pn_ratio":45.44},{"date":"05/27","doc_num":3138,"pn_ratio":37.06},{"date":"05/28","doc_num":4061,"pn_ratio":26.27},{"date":"05/29","doc_num":3760,"pn_ratio":19.48},{"date":"05/30","doc_num":3394,"pn_ratio":36.63},{"date":"05/31","doc_num":4599,"pn_ratio":67.22}];
+
+var gridColor = 'rgba(255,255,255,0.06)';
+var tickColor = '#A8B3A8';
+Chart.defaults.font.family = "'Noto Sans TC', sans-serif";
+
+new Chart(document.getElementById('trendChart'), {
+  data: {
+    labels: dailyData.map(function(d){ return d.date; }),
+    datasets: [
+      {
+        type: 'bar',
+        label: '每日聲量',
+        data: dailyData.map(function(d){ return d.doc_num; }),
+        backgroundColor: 'rgba(122,167,217,0.55)',
+        borderRadius: 3,
+        yAxisID: 'y',
+        order: 2
+      },
+      {
+        type: 'line',
+        label: '正負評比',
+        data: dailyData.map(function(d){ return d.pn_ratio; }),
+        borderColor: '#E0935C',
+        backgroundColor: '#E0935C',
+        borderWidth: 2,
+        pointRadius: 0,
+        tension: 0.35,
+        yAxisID: 'y1',
+        order: 1
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { ticks: { color: tickColor, autoSkip: true, maxRotation: 0, font: { size: 11 } }, grid: { display: false } },
+      y: { position: 'left', ticks: { color: tickColor, font: { size: 11 } }, grid: { color: gridColor } },
+      y1: { position: 'right', ticks: { color: tickColor, font: { size: 11 } }, grid: { display: false }, min: 0 }
+    }
+  }
+});
+
+new Chart(document.getElementById('sourceChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['社群平台', '新聞媒體', '留言/評論', '論壇', '部落格'],
+    datasets: [{
+      data: [93823, 2689, 1315, 690, 37],
+      backgroundColor: ['#7AA7D9', '#E0935C', '#9F8FE0', '#5DCAA5', '#5F5E5A'],
+      borderWidth: 0
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    cutout: '62%',
+    plugins: { legend: { position: 'bottom', labels: { color: tickColor, font: { size: 11.5 }, padding: 12, boxWidth: 10, boxHeight: 10 } } }
+  }
+});
+
+new Chart(document.getElementById('audienceChart'), {
+  type: 'bar',
+  data: {
+    labels: ['上班族', '女性', '有子女', '男性', '已婚', '未婚', '青年', '學生'],
+    datasets: [{
+      data: [1.34, 1.29, 0.53, 0.42, 0.36, 0.31, 0.10, 0.03],
+      backgroundColor: '#9F8FE0',
+      borderRadius: 3
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { ticks: { color: tickColor, font: { size: 11 }, callback: function(v){ return v + '%'; } }, grid: { color: gridColor } },
+      y: { ticks: { color: tickColor, font: { size: 12 } }, grid: { display: false } }
+    }
+  }
+});
+
+new Chart(document.getElementById('keywordChart'), {
+  type: 'bar',
+  data: {
+    labels: ['屈臣氏獨家', '一樓', '超細', '牙線棒', '小資', '泥膜', '衛生紙', '韓國', '超萌', '康是美'],
+    datasets: [{
+      data: [12729, 6356, 6483, 5400, 2966, 1998, 1843, 1767, 1668, 525],
+      backgroundColor: '#E0935C',
+      borderRadius: 3
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { ticks: { color: tickColor, font: { size: 11 } }, grid: { color: gridColor } },
+      y: { ticks: { color: tickColor, font: { size: 12 } }, grid: { display: false } }
+    }
+  }
+});
+
+document.addEventListener('DOMContentLoaded', function(){
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('.navlinks a');
+  window.addEventListener('scroll', function(){
+    var current = '';
+    sections.forEach(function(s){
+      var rect = s.getBoundingClientRect();
+      if(rect.top <= 120 && rect.bottom > 120) current = s.id;
+    });
+    navLinks.forEach(function(l){
+      l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+    });
+  });
+});
+</script>
+
+</body>
+</html>
